@@ -32,9 +32,9 @@
 	import "../../assets/plugins/chartjs/js/Chart.extension.js";
 	import "../../assets/js/index.js";
 	import "../../assets/js/app.js";
-    import TopRocker from '../components/TopRocker.vue/index.js';
-    import BotRocker from '../components/BotRocker.vue/index.js';
-import MenuRocker from "../components/MenuRocker.vue/index.js";
+    import TopRocker from '../components/TopRocker.vue';
+    import BotRocker from '../components/BotRocker.vue';
+import MenuRocker from "../components/MenuRocker.vue";
         
 export default {
     components: {
