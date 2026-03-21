@@ -38,10 +38,10 @@
                 <div class="user-box dropdown px-3">
                     <a class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret" href="#"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../../assets/images/avatars/avatar-1.png" class="user-img" alt="user avatar">
+                        <img :src="getAvatar" class="user-img" alt="user avatar">
                         <div class="user-info d-none d-sm-block">
-                            <p class="user-name mb-0">Quản Trị Viên</p>
-                            <p class="designattion mb-0">Quản Lý</p>
+                            <p class="user-name mb-0">{{ profile.ho_ten || 'Đang tải...' }}</p>
+                            <p class="designattion mb-0">{{ profile.ten_chuc_vu || '...' }}</p>
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -66,7 +66,52 @@ import axios from 'axios';
 
 export default {
     name: "InAppTop",
+    data() {
+        return {
+            profile: {}
+        };
+    },
+    computed: {
+        getAvatar() {
+            if (this.profile && this.profile.hinh_anh) {
+                if (this.profile.hinh_anh.startsWith('http')) {
+                    return this.profile.hinh_anh;
+                }
+                return 'http://127.0.0.1:8000' + this.profile.hinh_anh;
+            }
+            // Use a fallback avatar URL if not available or default from relative path might fail on dynamic bind.
+            // Using a simple API placeholder or relative URL.
+            // When using import it is safer, but returning a generic placeholder works if the relative path fails.
+            return 'https://ui-avatars.com/api/?name=' + (this.profile.ho_ten || 'Admin') + '&background=random';
+        }
+    },
+    mounted() {
+        this.loadProfile();
+        // Lắng nghe sự kiện cập nhật profile nếu có (tùy chọn)
+        window.addEventListener('profile-updated', this.loadProfile);
+    },
+    beforeUnmount() {
+        window.removeEventListener('profile-updated', this.loadProfile);
+    },
     methods: {
+        loadProfile() {
+            const token = localStorage.getItem('token_admin');
+            if (!token) return;
+            
+            axios.get('http://127.0.0.1:8000/api/admin/profile/data', {
+                headers: {
+                    Authorization: "Bearer " + token,
+                },
+            })
+            .then(res => {
+                if (res.data.status) {
+                    this.profile = res.data.data;
+                }
+            })
+            .catch((err) => {
+                console.error('Lỗi khi tải profile InAppTop:', err);
+            });
+        },
         async logout() {
             try {
                 const token = localStorage.getItem('token_admin');

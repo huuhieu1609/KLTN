@@ -40,7 +40,7 @@
                                     <div class="card-body p-5">
                                         <div class="text-center mb-5 mt-n5 position-relative" style="top: -65px;">
                                             <div class="avatar-wrapper">
-                                                <img :src="anh_tmp || profile.hinh_anh || '../../../assets/images/avatars/avatar-1.png'"
+                                                <img :src="anh_tmp || (profile.hinh_anh ? (profile.hinh_anh.startsWith('http') ? profile.hinh_anh : 'http://127.0.0.1:8000' + profile.hinh_anh) : '../../../assets/images/avatars/avatar-1.png')"
                                                     class="avatar-img shadow-sm">
                                                 <label for="inputAvatar" class="camera-btn" title="Thay đổi ảnh đại diện">
                                                     <i class="bx bx-camera fs-5"></i>
