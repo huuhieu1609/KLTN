@@ -4,7 +4,7 @@
 			<header>
                <TopRocker></TopRocker> 
 			</header>
-          <MenuRocker></MenuRocker>
+<!-- <MenuRocker></MenuRocker> -->
 		</div>
 		<div class="page-wrapper">
 			<div class="page-content">
@@ -34,13 +34,13 @@
 	import "../../assets/js/app.js";
     import TopRocker from '../components/TopRocker.vue';
     import BotRocker from '../components/BotRocker.vue';
-import MenuRocker from "../components/MenuRocker.vue";
+// import MenuRocker from "../components/MenuRocker.vue";
         
 export default {
     components: {
         TopRocker,
         BotRocker,
-        MenuRocker
+        // MenuRocker
     }
 }
 </script>

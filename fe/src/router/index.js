@@ -9,39 +9,48 @@ const routes = [
 
     {
         path: '/admin/quan-ly-hoa-don',
-        component: () => import('../components/Admin/QuanLyHoaDon/index.vue')
+        component: () => import('../components/Admin/QuanLyHoaDon/index.vue'),
+        meta: { layout: 'inapp' }
     },
     {
         path: '/admin/phong-hop',
-        component: () => import('../components/Admin/PhongHop/index.vue')
+        component: () => import('../components/Admin/PhongHop/index.vue'),
+        meta: { layout: 'inapp' }
     },
     {
         path: '/admin/goi-dich-vu',
-        component: () => import('../components/Admin/Goi/index.vue')
+        component: () => import('../components/Admin/Goi/index.vue'),
+        meta: { layout: 'inapp' }
     },
     {
         path: '/admin/doi-tac',
-        component: () => import('../components/Admin/DoiTac/index.vue')
+        component: () => import('../components/Admin/DoiTac/index.vue'),
+        meta: { layout: 'inapp' }
     },
     {
         path: '/admin/nguoi-dung',
-        component: () => import('../components/Admin/NguoiDung/index.vue')
+        component: () => import('../components/Admin/NguoiDung/index.vue'),
+        meta: { layout: 'inapp' }
     },
     {
         path: '/admin/phan-quyen',
-        component: () => import('../components/Admin/PhanQuyen/index.vue')
+        component: () => import('../components/Admin/PhanQuyen/index.vue'),
+        meta: { layout: 'inapp' }
     },
     {
         path: '/admin/dang-nhap',
-        component: () => import('../components/Admin/DangNhap/index.vue')
+        component: () => import('../components/Admin/DangNhap/index.vue'),
+        meta: { layout: 'black' }
     },
     {
         path: '/admin/nhan-vien',
-        component: () => import('../components/Admin/NhanVien/index.vue')
+        component: () => import('../components/Admin/NhanVien/index.vue'),
+        meta: { layout: 'inapp' }
     },
     {
-        path: '/admin/phan-quyen',
-        component: () => import('../components/Admin/PhanQuyen/index.vue')
+        path: '/admin/profile',
+        component: () => import('../components/Admin/Profile/index.vue'),
+        meta: { layout: 'inapp' }
     },
 
     //Nguoi Dung

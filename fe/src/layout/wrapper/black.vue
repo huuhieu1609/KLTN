@@ -1,12 +1,19 @@
 <template>
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+        <transition name="fade-page" mode="out-in">
+            <component :is="Component" />
+        </transition>
+    </router-view>
 </template>
 <script>
-import "../../assets/js/bootstrap.bundle.min.js";
-import "../../assets/js/jquery.min.js";
-import "../../assets/js/app.js";
 export default {
-
+    name: 'LayoutBlack',
+    mounted() {
+        // Essential scripts only if not already loaded
+        if (!window.bootstrap) {
+            import("../../assets/js/bootstrap.bundle.min.js");
+        }
+    }
 }
 </script>
 <style>
@@ -14,4 +21,20 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 @import "../../assets/css/app.css";
 @import "../../assets/css/icons.css";
+
+/* Smooth Page Transitions */
+.fade-page-enter-active,
+.fade-page-leave-active {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-page-enter-from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.fade-page-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+}
 </style>

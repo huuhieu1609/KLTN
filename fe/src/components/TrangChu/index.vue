@@ -33,9 +33,8 @@
                             <!-- Face Recognition Graphic -->
                             <div class="rounded-4 overflow-hidden position-relative"
                                 style="aspect-ratio: 1/1; background: #000;">
-                                <img src="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/610786504_1316300660521769_7671357906105339229_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeEIJ4Es9z5jd7i4uSUWwqMJOVgl881m_EU5WCXzzWb8RR9SxEdMfXupmZpNj45ZaPnV2M5rOSVabe3t48L-uj-8&_nc_ohc=BI8Pm76IrIIQ7kNvwHdttsg&_nc_oc=AdkXKctda8gqS1upP73a9rDZ3BaXYkZWRzDShwCMWvONI8J4-R5PfsYgR5TsqGDTjYU&_nc_zt=23&_nc_ht=scontent.fdad3-6.fna&_nc_gid=vVcqUppMXByhkLtDql4qJQ&_nc_ss=8&oh=00_AfxXwV-I32asSwSPVq_tJ6FGEBcxd2lWVjgyjUh0c9svYQ&oe=69B861C4"
-                                    class="w-100 h-100 object-fit-cover" alt="AI Face Recognition"
-                                    style="filter: brightness(0.85) contrast(1.1);">
+                                <img src="../../assets/images/hero-face.png" class="w-100 h-100 object-fit-cover"
+                                    alt="AI Face Recognition" style="filter: brightness(0.85) contrast(1.1);">
                                 <div
                                     class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center">
 

@@ -1,10 +1,12 @@
 <template>
-    <div class="client-wrapper" style="min-height: 100vh;">
-        <TopClient></TopClient>
-        <router-view></router-view>
+    <div>
+        <div class="client-wrapper" style="min-height: 100vh;">
+            <TopClient></TopClient>
+            <router-view></router-view>
 
+        </div>
+        <BotClient></BotClient>
     </div>
-    <BotClient></BotClient>
 </template>
 <script>
 import "../../assets/js/bootstrap.bundle.min.js";

@@ -223,7 +223,7 @@ export default {
     },
     methods: {
         headers() {
-            return { Authorization: 'Bearer ' + localStorage.getItem('admin_token') };
+            return { Authorization: 'Bearer ' + localStorage.getItem('token_admin') };
         },
         tenChucVu(id) {
             const cv = this.list_chuc_vu.find(x => x.id == id);
